@@ -1,26 +1,91 @@
 # 🛒 Digital Store Back-End
 
-Repositório do back‑end da aplicação **Digital Store**, responsável pela gestão de produtos, usuários, vendas e autenticação via API RESTful.
+Back-end da aplicação **Digital Store**, uma API RESTful construída com **Node.js** e **Express** para gerenciar produtos, usuários, categorias, carrinho de compras e pedidos.
 
 ---
 
-## ⚙️ Tecnologias
+## ⚙️ Tecnologias Utilizadas
 
-- **Node.js** / **Express** – servidor HTTP
-- **bcryptjs** – hashing de senhas
+- **Node.js** – ambiente de execução JavaScript no servidor
+- **Express.js** – framework para construção de APIs REST
+- **bcryptjs** – criptografia de senhas
+- **jsonwebtoken (JWT)** – autenticação e autorização
 - **Jest + Supertest** – testes unitários e de integração
-- **ESLint + Prettier** – padronização de código
+- **ESLint + Prettier** – padronização e formatação de código
+- **dotenv** – gerenciamento de variáveis de ambiente
 
 ---
 
-## 🚀 Funcionalidades principais
+## 🚀 Funcionalidades Principais
 
-1. **Gestão de Produtos**
-   - CRUD completo: criar, listar, atualizar e remover produtos
+### 🧑‍💼 Usuários & Autenticação
+- Registro e login de usuários
+- Autenticação via token JWT
+- Proteção de rotas com middleware de autorização
 
-2. **Carrinho & Pedidos**
-   - Adicionar itens ao carrinho, consultar, editar e remover
-   - Criação de pedido com total, status e itens detalhados
+### 🛍️ Produtos
+- CRUD completo (Create, Read, Update, Delete)
+- Associação com categorias
+- Suporte a imagens e opções de produtos
 
-4. **Testes**
-   - Cobertura com Jest (rotas, serviços, controle de erros)
+### 📁 Categorias
+- Cadastro e listagem de categorias de produtos
+
+### 🛒 Carrinho & Pedidos
+- Adição de produtos ao carrinho
+- Criação e consulta de pedidos com itens, total e status
+
+### ✅ Testes Automatizados
+- Cobertura de testes com **Jest** e **Supertest**
+- Testes de integração para usuários, produtos e categorias
+
+---
+
+## 📁 Estrutura do Projeto
+
+```text
+digital_store_back_end/
+├── src/
+│   ├── config/                 # Configuração de banco de dados
+│   │   └── database.js
+│
+│   ├── controllers/            # Controladores de rotas
+│   │   ├── AuthController.js
+│   │   ├── CategoryController.js
+│   │   ├── ProductController.js
+│   │   └── UserController.js
+│
+│   ├── database/               # Inicialização e conexão com DB
+│   │   └── index.js
+│
+│   ├── middleware/             # Middlewares personalizados
+│   │   └── auth.js             # Autenticação JWT
+│
+│   ├── models/                 # Modelos de dados (ORM)
+│   │   ├── Category.js
+│   │   ├── Product.js
+│   │   ├── ProductImage.js
+│   │   ├── ProductOption.js
+│   │   └── User.js
+│
+│   ├── routes/                 # Definição das rotas da API
+│   │   ├── categoryRoutes.js
+│   │   ├── productRoutes.js
+│   │   └── userRoutes.js
+│
+│   ├── services/               # Regras de negócio
+│   │   └── ProductService.js
+│
+│   ├── app.js                  # Configuração do Express
+│   └── server.js               # Inicialização do servidor
+│
+├── tests/                      # Testes automatizados
+│   ├── category.test.js
+│   ├── product.test.js
+│   └── user.test.js
+│
+├── .env                        # Variáveis de ambiente
+├── package.json                # Scripts e dependências
+├── package-lock.json
+└── README.md                   # Documentação do projeto
+
