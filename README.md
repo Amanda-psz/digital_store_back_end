@@ -26,14 +26,3 @@ Repositório do back‑end da aplicação **Digital Store**, responsável pela g
    - Cobertura com Jest (rotas, serviços, controle de erros)
 
 ---
-
-## 🧱 Estrutura do Projeto
-
-src/
-│
-├─ controllers/ – lógica de rotas
-├─ routes/ – definição de endpoints
-├─ services/ – regras de negócio
-├─ middlewares/ – validação, auth e tratamento de erros
-└─ tests/ – testes automatizados
-
