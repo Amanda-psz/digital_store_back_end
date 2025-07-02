@@ -24,5 +24,3 @@ Repositório do back‑end da aplicação **Digital Store**, responsável pela g
 
 4. **Testes**
    - Cobertura com Jest (rotas, serviços, controle de erros)
-
----
