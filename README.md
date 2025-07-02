@@ -6,7 +6,7 @@ Repositório do back‑end da aplicação **Digital Store**, responsável pela g
 
 ## ⚙️ Tecnologias
 
-- **Node.js** / **Express** – servidor HTTP e roteamenton
+- **Node.js** / **Express** – servidor HTTP
 - **bcryptjs** – hashing de senhas
 - **Jest + Supertest** – testes unitários e de integração
 - **ESLint + Prettier** – padronização de código
